@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="texto"></input>        
+    </form>
+</body>
+<script>
+    let texto = document.getElementById('texto');
+    texto.addEventListener('focus',()=>{
+        texto.style.borderColor = 'green';
+        texto.style.outline = 'green';
+    });
+    texto.addEventListener('blur',(ev)=>{
+        texto.style.borderColor = '';
+        texto.style.outline = '';
+        if (ev.target.value === '') {
+            console.log('Nada escrito');
+        }
+    });
+</script>
+</html>

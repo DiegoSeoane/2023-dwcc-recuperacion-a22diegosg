@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="ocultar">Fai clic para que desapareza o texto</button><br><br>
+<input type="text" id="textoExercicio1" name="texto" /><br><br>
+<div id="texto">Texto</div>
+</body>
+<script>
+    
+    //button
+
+    let texto = document.getElementById('texto');
+    let button = document.querySelector('button');
+    button.addEventListener('mouseover',()=>{
+        console.log('mouseover');
+    });
+    button.addEventListener('mouseout',()=>{
+        console.log('mouseout');
+    });
+    button.addEventListener('click',(ev)=>{
+        ev.preventDefault();
+        texto.style.display = 'none';
+    });
+    
+    //input
+
+    let input = document.querySelector('input');
+
+    input.addEventListener('keyup',(ev)=>{
+        if (texto.style.display === 'none') {
+            texto.style.display = 'block';
+        }
+        texto.innerText = 'Code: ' + ev.keyCode + ' Key: ' + ev.key;
+    })
+</script>
+</html>

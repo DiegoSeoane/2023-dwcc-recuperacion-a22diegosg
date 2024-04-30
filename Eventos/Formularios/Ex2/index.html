@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        This is a input text <input type="text" id="texto"><br>
+        <input type="radio" name="radio" id="1">Input radio 1 <br>
+        <input type="radio" name="radio" id="2">Input radio 2 <br>
+        <input type="checkbox" name="checkbox" id="checkbox">This is a checkbox <br>
+        <textarea name="textarea" id="textarea" cols="30" rows="10">Text Area</textarea>
+        <button>Enviar</button>
+    </form>
+</body>
+<script>
+    let button = document.querySelector('button');
+    button.addEventListener('click', (ev)=>{
+        ev.preventDefault();
+        let texto = document.getElementById('texto');
+        let radio1 = document.getElementById('1');
+        let radio2 = document.getElementById('2');
+        let check = document.getElementById('checkbox');
+        let textarea = document.getElementById('textarea');
+        console.log(texto.value);
+        console.log(radio1.checked);
+        console.log(radio2.checked);
+        console.log(check.checked);
+        console.log(textarea.value);
+    })
+</script>
+</html>
