@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #contents {
+            padding: 5px;
+            border: 1px green solid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <fieldset id="contents">
+        <legend>#contents</legend>
+        <p>
+            ¿Que tal si leemos <a href="https://wikipedia.org">Wikipedia</a> o visitamos <a
+                href="https://w3.org"><i>W3.org</i></a> y aprendemos sobre los estándares modernos?
+        </p>
+    </fieldset>
+
+</body>
+<script>
+    let contents = document.getElementById('contents');
+    let ligazons = document.querySelectorAll('a');
+
+    for (const a of ligazons) {
+        a.addEventListener('click', (ev) => {
+            if (!confirm('queres continuar?')) {
+                ev.preventDefault();
+            }
+        });
+    }
+</script>
+
+</html>

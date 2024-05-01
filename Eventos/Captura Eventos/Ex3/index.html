@@ -5,18 +5,22 @@
   <meta charset="utf-8">
   <style>
     table {
-       border-collapse: collapse;
-     }
-     th, td {
-       border: 1px solid black;
-       padding: 4px;
-     }
-     th {
-       cursor: pointer;
-     }
-     th:hover {
-       background: yellow;
-     }
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 4px;
+    }
+
+    th {
+      cursor: pointer;
+    }
+
+    th:hover {
+      background: yellow;
+    }
   </style>
 </head>
 
@@ -56,22 +60,23 @@
   <script>
     let tbody = document.querySelector('tbody');
     let titulos = document.querySelectorAll('th');
-    
-    for (const th of titulos) {      
-      th.addEventListener('click',()=>{
-        if (th.innerText === 'Age') {
-          let rows = Array.from(tbody.rows);
-          rows.sort(comparar(a,b)=>{
-      return a.cells[1].innerHTML - b.cells[1].innerHTML;
-    })
-          
-        }else{
 
-        }
-      });
-    }
-    
+    // for (const th of titulos) {
+    //   th.addEventListener('click', () => {
+    //     if (th.innerText === 'Age') {
+    //       let rows = Array.from(tbody.rows);
+    //       rows.sort(comparar(a, b)=> {
+    //         return a.cells[1].innerHTML - b.cells[1].innerHTML;
+    //       })
+
+    //     } else {
+
+    //     }
+    //   });
+    // }
+
   </script>
 
 </body>
+
 </html>

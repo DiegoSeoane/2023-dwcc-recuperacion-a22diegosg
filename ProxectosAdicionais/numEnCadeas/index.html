@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    function numerosEnCadeas(array) {
+        let novoArray = [];
+        for (const elemento of array) {
+            let elementoSplit = elemento.split('');
+            for (const letra of elementoSplit) {
+                if (parseInt(letra)) {
+                    novoArray.push(elementoSplit.join(''));
+                }
+            }
+        }
+        return novoArray;
+    }
+    console.log(numerosEnCadeas(["1a", "a", "2b", "b"]));
+    console.log(numerosEnCadeas(["abc", "abc10"]));
+    console.log(numerosEnCadeas(["abc", "ab10c", "a10bc", "bcd"]));
+    console.log(numerosEnCadeas(["this is a test", "test1"]));
+
+
+</script>
+
+</html>
