@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Texto: <input type="text" name="texto" id="texto"> <br>
+        Radio 1 :<input type="radio" name="radio" id="radio1"> <br>
+        Radio 2 :<input type="radio" name="radio" id="radio2"> <br>
+        CheckBox :<input type="checkbox" name="checkbox" id="checkbox"> <br>
+        <button>Boton</button>
+    </form>
+</body>
+<script>
+    let texto = document.getElementById('texto');
+    let boton = document.querySelector('button');
+    let radio = document.querySelector('radio');
+    let textoInput = localStorage.getItem('texto');
+    texto.value = textoInput;  
+    console.log(localStorage);
+    boton.addEventListener('click',(ev)=>{
+        ev.preventDefault();
+        textoInput = localStorage.setItem('texto',texto.value);
+        
+        console.log(localStorage);
+    });
+
+</script>
+</html>

@@ -46,5 +46,18 @@
         </ul>
     </form>
 </body>
+<script>
+    let inputs = document.querySelectorAll('input');
+    for (const input of inputs) {
+        input.setAttribute('required', '');        
+    }
+    let nome = document.getElementById('uname');
+    let email = document.getElementById('email');
+    let phone = document.getElementById('phone');
+    let comment = document.getElementById('comment');
 
+    nome.setAttribute('pattern', '^[a-z]{1}\\.\\w{3,}$');
+    email.setAttribute('pattern', '^[a-z](@bigcorp.eu)');
+    phone.setAttribute('pattern', '[0-9]{3}\\.|\\*[0-9]{3}\\.|\\*[0-9]{3}')
+</script>
 </html>

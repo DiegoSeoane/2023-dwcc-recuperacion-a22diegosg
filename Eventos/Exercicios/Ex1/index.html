@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Width: <input type="text" name="width" id="width"> <br> <br>
+    Height: <input type="text" name="height" id="height">
+    <div width="100" height="100" style="background-color: yellow;">
+
+    </div>
+</body>
+<script>
+let w = document.getElementById('width');
+let h = document.getElementById('height');
+let div = document.querySelector('div');
+w.addEventListener('input',(ev)=>{
+    div.attributes['width'] = w.value;
+})
+h.addEventListener('input',(ev)=>{
+    div.attributes['height'] = h.value;
+    console.log(div.attributes['height'], h.value);
+})
+</script>
+</html>

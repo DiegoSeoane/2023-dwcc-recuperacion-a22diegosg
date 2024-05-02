@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista da Compra</title>
+</head>
+<style>span{
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
+</style>
+<body>
+    <h1>Lista compra</h1>
+    <form>
+        <h3>Engade novo elemento</h3>
+        <input type="text" name="novoElemento" id="novoElemento">
+        <br>
+        <br>
+        <button>Engadir elemento</button>
+        <br><br>
+        <h3>Filtro</h3>
+        <input type="text" name="filter" id="filter">
+        <br>
+        <ul>            
+        </ul>
+    </form>
+</body>
+<script>
+    let novoElemento = document.getElementById('novoElemento');
+    let boton = document.querySelector('button');
+    let filtro = document.getElementById('filter');
+    let ul = document.querySelector('ul');     
+    boton.addEventListener('click',(ev)=>{
+        ev.preventDefault();
+        let li = document.createElement('li');
+        li.innerHTML = novoElemento.value + '<span> X <span>';
+        ul.append(li);
+    });
+    ul.addEventListener('click',(ev)=>{
+        if (ev.target.tagName === 'SPAN') {
+            ev.target.parentElement.remove();
+        }
+    });
+
+    filtro.addEventListener('input',(ev)=>{
+        for (const li of ul.childNodes) {
+            console.log(li.innerText.includes('a'));
+        }
+    });
+
+</script>
+</html>
