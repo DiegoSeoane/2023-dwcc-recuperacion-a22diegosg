@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function sumaParImpar(cifras) {
+        let total = 0;
+        let arrayCifrasString = cifras.toString().split('');
+        for (const cifra of arrayCifrasString) {
+            total += Number.parseInt(cifra);
+        }
+        return total;
+    }
+    console.log(sumaParImpar(43));
+    console.log(sumaParImpar(373));
+    console.log(sumaParImpar(4433));
+</script>
+</html>
