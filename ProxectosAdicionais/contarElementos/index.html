@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    function contarElementos(array) {
+        let count = 0;
+        for (const elemento of array) {
+            if (Array.isArray(elemento)) {                
+                count += contarElementos(elemento);                
+            }else{
+                count++;
+            }
+        }
+        return count;
+    }
+    console.log(contarElementos([1, [2, 3]]));
+    console.log(contarElementos([1, [2, [3, 4]]]));
+    console.log(contarElementos([1, [2, [3, [4, [5, 6]]]]]));
+    console.log(contarElementos([1, [2], 1, [2], 1]));
+    console.log(contarElementos([]));    
+</script>
+</html>
