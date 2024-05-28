@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script defer>
+    function reconstruirFrase(string, vowels){
+        let vocales = vowels.split('');
+        let oracion = string.split('');
+        let contador = 0;
+        for (const letra in oracion) {
+            
+            if (oracion[letra] === '*') {
+                oracion[letra] = vowels[contador];
+                contador++;
+            }
+        }
+        return oracion.join('');
+    }
+console.log(reconstruirFrase("Wh*r* d*d my v*w*ls g*?", "eeioeo"));
+console.log(reconstruirFrase("abcd", ""));
+console.log(reconstruirFrase("*PP*RC*S*", "UEAE"));
+</script>
+</html>
